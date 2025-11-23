@@ -1,31 +1,9 @@
-#include <iostream>
-#include <vector>
+#pragma once
 #include <queue>
 #include <algorithm>
 #include <chrono>
 #include <cmath>
-
-struct Edge {
-    int to_id;
-    double distance;
-};
-
-struct Node {
-    int id;
-    std::vector<Edge> edges;
-    int x, y;
-};
-
-struct Result {
-    bool found;
-    double total_distance;
-    int visited_nodes;
-    long long duration;
-    std::vector<int> path;
-
-    Result() : found(false), total_distance(0), visited_nodes(0), duration(0) {}
-    Result(bool f, double total, int visited, long long dur, std::vector<int>&& p) : found(f), total_distance(total), visited_nodes(visited), duration(dur), path(p) {}
-};
+#include "algorithms.h"
 
 Result dijkstra(int start_id, int end_id, const std::vector<Node>& graph) {
     using type = std::pair<double, int>;
@@ -78,7 +56,7 @@ Result dijkstra(int start_id, int end_id, const std::vector<Node>& graph) {
     }
     std::reverse(path.begin(), path.end());
 
-    return { true, distances[end_id], visited_nodes, duration, std::move(path)};
+    return { true, distances[end_id], visited_nodes, duration, std::move(path) };
 }
 
 double heuristic(const Node& left, const Node& right) {
@@ -139,9 +117,4 @@ Result a_star(int start_id, int end_id, const std::vector<Node>& graph) {
     std::reverse(path.begin(), path.end());
 
     return { true, g_distances[end_id], visited_nodes, duration, std::move(path) };
-}
-
-int main()
-{
-    std::cout << "Hello World!\n";
 }
