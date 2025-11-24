@@ -7,11 +7,11 @@ add_library(SearchLib
 	graph_structure.h
 	algorithms.h
 	algorithms.cpp
-)
+ "graph_generator.cpp" "graph_generator.h")
 
 target_include_directories(SearchLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-add_executable(SearchLab main.cpp)
+add_executable(SearchLab main.cpp "graph_generator.cpp" "graph_generator.h")
 
 include(FetchContent)
 

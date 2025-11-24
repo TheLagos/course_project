@@ -8,8 +8,12 @@ struct Edge {
 
 struct Node {
     int id;
+    bool wall;
     std::vector<Edge> edges;
     int x, y;
+
+    Node() = default;
+    Node(int _id, bool _wall, int _x, int _y) : id(_id), wall(_wall), x(_x), y(_y) {}
 };
 
 struct Result {
