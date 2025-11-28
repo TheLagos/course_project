@@ -5,14 +5,23 @@
 #include <cmath>
 #include "algorithms.h"
 
-Result dijkstra(int start_id, int end_id, const std::vector<Node>& graph) {
+Result dijkstra(const Grid& grid) {
+    int start_id = grid.get_start();
+    int finish_id = grid.get_finish();
+    const std::vector<Node>& graph = grid.get_graph();
+    size_t size = grid.size();
+
+    if (start_id == -1 || finish_id == -1) {
+        return Result();
+    }
+
     using type = std::pair<double, int>;
     constexpr double INF = std::numeric_limits<double>::infinity();
     int visited_nodes = 0;
 
-    std::vector<double> distances(graph.size(), INF);
-    std::vector<int> parents(graph.size(), -1);
-    std::priority_queue<type, std::vector<type>, std::greater <type>> pq;
+    std::vector<double> distances(size, INF);
+    std::vector<int> parents(size, -1);
+    std::priority_queue<type, std::vector<type>, std::greater<type>> pq;
 
     distances[start_id] = 0;
     pq.emplace(0, start_id);
@@ -29,11 +38,15 @@ Result dijkstra(int start_id, int end_id, const std::vector<Node>& graph) {
             continue;
         }
 
-        if (current_id == end_id) {
+        if (current_id == finish_id) {
             break;
         }
 
         for (const Edge& edge : graph[current_id].edges) {
+            if (graph[edge.to_id].wall) {
+                continue;
+            }
+
             double new_distance = distances[current_id] + edge.distance;
 
             if (new_distance < distances[edge.to_id]) {
@@ -46,17 +59,17 @@ Result dijkstra(int start_id, int end_id, const std::vector<Node>& graph) {
     const auto finish(std::chrono::steady_clock::now());
     long long duration = std::chrono::duration_cast<std::chrono::milliseconds>(finish - start).count();
 
-    if (distances[end_id] == INF) {
+    if (distances[finish_id] == INF) {
         return Result();
     }
 
     std::vector<int> path;
-    for (int current = end_id; current != -1; current = parents[current]) {
+    for (int current = finish_id; current != -1; current = parents[current]) {
         path.push_back(current);
     }
     std::reverse(path.begin(), path.end());
 
-    return { true, distances[end_id], visited_nodes, duration, std::move(path) };
+    return { true, distances[finish_id], visited_nodes, duration, std::move(path) };
 }
 
 double heuristic(const Node& left, const Node& right) {
@@ -65,17 +78,26 @@ double heuristic(const Node& left, const Node& right) {
     return std::sqrt(dx * dx + dy * dy);
 }
 
-Result a_star(int start_id, int end_id, const std::vector<Node>& graph) {
+Result a_star(const Grid& grid) {
+    int start_id = grid.get_start();
+    int finish_id = grid.get_finish();
+    const std::vector<Node>& graph = grid.get_graph();
+    size_t size = grid.size();
+
+    if (start_id == -1 || finish_id == -1) {
+        return Result();
+    }
+
     using type = std::pair<double, int>;
     constexpr double INF = std::numeric_limits<double>::infinity();
     int visited_nodes = 0;
 
-    std::vector<double> g_distances(graph.size(), INF);
-    std::vector<int> parents(graph.size(), -1);
+    std::vector<double> g_distances(size, INF);
+    std::vector<int> parents(size, -1);
     std::priority_queue<type, std::vector<type>, std::greater <type>> pq;
 
     g_distances[start_id] = 0;
-    pq.emplace(heuristic(graph[start_id], graph[end_id]), start_id);
+    pq.emplace(heuristic(graph[start_id], graph[finish_id]), start_id);
 
     const auto start(std::chrono::steady_clock::now());
     while (!pq.empty()) {
@@ -85,20 +107,24 @@ Result a_star(int start_id, int end_id, const std::vector<Node>& graph) {
         ++visited_nodes;
         pq.pop();
 
-        if (current_f > g_distances[current_id] + heuristic(graph[current_id], graph[end_id]) + 0.00001) {
+        if (current_f > g_distances[current_id] + heuristic(graph[current_id], graph[finish_id]) + 0.00001) {
             continue;
         }
 
-        if (current_id == end_id) {
+        if (current_id == finish_id) {
             break;
         }
 
         for (const Edge& edge : graph[current_id].edges) {
+            if (graph[edge.to_id].wall) {
+                continue;
+            }
+
             double new_g = g_distances[current_id] + edge.distance;
 
             if (new_g < g_distances[edge.to_id]) {
                 g_distances[edge.to_id] = new_g;
-                pq.emplace(new_g + heuristic(graph[edge.to_id], graph[end_id]), edge.to_id);
+                pq.emplace(new_g + heuristic(graph[edge.to_id], graph[finish_id]), edge.to_id);
                 parents[edge.to_id] = current_id;
             }
         }
@@ -106,15 +132,15 @@ Result a_star(int start_id, int end_id, const std::vector<Node>& graph) {
     const auto finish(std::chrono::steady_clock::now());
     long long duration = std::chrono::duration_cast<std::chrono::milliseconds>(finish - start).count();
 
-    if (g_distances[end_id] == INF) {
+    if (g_distances[finish_id] == INF) {
         return Result();
     }
 
     std::vector<int> path;
-    for (int current = end_id; current != -1; current = parents[current]) {
+    for (int current = finish_id; current != -1; current = parents[current]) {
         path.push_back(current);
     }
     std::reverse(path.begin(), path.end());
 
-    return { true, g_distances[end_id], visited_nodes, duration, std::move(path) };
+    return { true, g_distances[finish_id], visited_nodes, duration, std::move(path) };
 }

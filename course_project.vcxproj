@@ -128,11 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="algorithms.cpp" />
+    <ClCompile Include="grid.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithms.h" />
-    <ClInclude Include="graph_structure.h" />
+    <ClInclude Include="grid.h" />
+    <ClInclude Include="graph_types.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

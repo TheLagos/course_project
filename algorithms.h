@@ -1,9 +1,10 @@
 #pragma once
-#include "graph_structure.h"
+#include "graph_types.h"
+#include "grid.h"
 
-Result dijkstra(int start_id, int end_id, const std::vector<Node>& graph);
+Result dijkstra(const Grid& grid);
 
 double heuristic(const Node& left, const Node& right);
 
-Result a_star(int start_id, int end_id, const std::vector<Node>& graph);
+Result a_star(const Grid& grid);
 

@@ -2,27 +2,27 @@
 #include <vector>
 
 struct Edge {
-    int to_id;
-    double distance;
+    int to_id = -1;
+    double distance = 0;
 };
 
 struct Node {
-    int id;
-    bool wall;
+    int id = -1;
+    bool wall = false;
     std::vector<Edge> edges;
-    int x, y;
+    int x = 0, y = 0;
 
     Node() = default;
     Node(int _id, bool _wall, int _x, int _y) : id(_id), wall(_wall), x(_x), y(_y) {}
 };
 
 struct Result {
-    bool found;
-    double total_distance;
-    int visited_nodes;
-    long long duration;
+    bool found = false;
+    double total_distance = 0;
+    int visited_nodes = 0;
+    long long duration = 0;
     std::vector<int> path;
 
-    Result() : found(false), total_distance(0), visited_nodes(0), duration(0) {}
+    Result() = default;
     Result(bool f, double total, int visited, long long dur, std::vector<int>&& p) : found(f), total_distance(total), visited_nodes(visited), duration(dur), path(p) {}
 };
