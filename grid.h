@@ -1,6 +1,8 @@
 #pragma once
 #include "graph_types.h"
 #include <cstdlib>
+#include <string>
+#include <iostream>
 
 class Grid {
 private:
@@ -18,11 +20,11 @@ public:
 	Grid() = default;
 	~Grid() = default;
 
-	void generate_graph(int width, int height, int chance, double max_dist);
+    void generate_graph(int width, int height, int chance, double max_dist);
 	void toggle_wall(int id);
 
-	bool set_start(int id);
-	bool set_finish(int id);
+    bool set_start(int id);
+    bool set_finish(int id);
 
 	int get_start() const;
 	int get_finish() const;

@@ -5,8 +5,11 @@ const int dy[] = { -1, 1, 0, 0 };
 
 
 void Grid::add_edge(Node& current, const Node& neighbour) {
-	int distance = rand() % static_cast<int>(max_distance) + 1;
-	current.edges.push_back({ neighbour.id, static_cast<double>(distance) });
+    int distance = 1;
+    if (max_distance > 1) {
+        distance = rand() % static_cast<int>(max_distance) + 1;
+    }
+    current.edges.push_back({ neighbour.id, static_cast<double>(distance) });
 }
 
 void Grid::generator() {
@@ -16,7 +19,7 @@ void Grid::generator() {
 		for (int x = 0; x < width; ++x) {
 			int id = y * width + x;
 			bool wall = false;
-			if (wall_chance > 0) {
+            if (wall_chance > 0) {
 				wall = (rand() % wall_chance) == 0;
 			}
 
@@ -71,30 +74,30 @@ void Grid::toggle_wall(int id) {
 	graph[id].wall = !graph[id].wall;
 }
 
-bool Grid::set_start(int id) { 
-	if (id < 0 || id >= (width * height) || id == finish_id) {
-		return false;
-	}
+bool Grid::set_start(int id) {
+    if (id < 0 || id >= (width * height) || id == finish_id) {
+        return false;
+    }
 
-	if (graph[id].wall) {
-		graph[id].wall = false;
-	}
+    if (graph[id].wall) {
+        graph[id].wall = false;
+    }
 
-	start_id = id;
-	return true; 
+    start_id = id;
+    return true;
 }
 
 bool Grid::set_finish(int id) {
-	if (id < 0 || id >= (width * height) || id == start_id) {
-		return false;
-	}
+    if (id < 0 || id >= (width * height) || id == start_id) {
+        return false;
+    }
 
-	if (graph[id].wall) {
-		graph[id].wall = false;
-	}
+    if (graph[id].wall) {
+        graph[id].wall = false;
+    }
 
-	finish_id = id;
-	return true;
+    finish_id = id;
+    return true;
 }
 
 int Grid::get_start() const { return start_id; }
@@ -102,3 +105,20 @@ int Grid::get_finish() const { return finish_id; }
 
 const std::vector<Node>& Grid::get_graph() const { return graph; }
 size_t Grid::size() const { return width * height; }
+
+void print_result(const Result& result, std::string&& algorithm_name) {
+    std::cout << algorithm_name << " results: " << "\n"
+              << "Successfull - " << result.found << "\n"
+              << "Total distance - " << result.total_distance << "\n"
+              << "Visited nodes count - " << result.visited_nodes << "\n"
+              << "Duration - " << result.duration << " ms \n"
+              << "Path - ";
+
+    for (const int& node : result.path) {
+        std::cout << node;
+        if (node != result.path.back()) {
+            std::cout << " -> ";
+        }
+    }
+    std::cout << "\n\n";
+}
