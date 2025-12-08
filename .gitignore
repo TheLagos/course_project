@@ -66,6 +66,7 @@ Makefile*
 *.pro.user.*
 
 # Default build directories created by Qt Creator
+build/
 build-*/
 ../build-*/
 
