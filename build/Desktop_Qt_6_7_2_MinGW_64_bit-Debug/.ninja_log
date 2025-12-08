@@ -1,0 +1,93 @@
+# ninja log v6
+19728	19870	7868316941687998	lib/libgmock_main.a	a40f838e44272bef
+6	282	7868316746598384	_deps/googletest-build/googletest/gtest_autogen/timestamp	a736c3a20625c33b
+6	282	7868316746598384	_deps/googletest-build/googletest/gtest_autogen/mocs_compilation.cpp	a736c3a20625c33b
+6	282	7868316746598384	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/_deps/googletest-build/googletest/gtest_autogen/timestamp	a736c3a20625c33b
+60	608	7869369447090712	SearchLib_autogen/mocs_compilation.cpp	199e71c56ae5304
+18229	18401	7868316927936056	_deps/googletest-build/googlemock/gmock_main_autogen/timestamp	41f7862599fe6c95
+60	608	7869369447090712	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLib_autogen/mocs_compilation.cpp	199e71c56ae5304
+60	608	7869369447090712	SearchLib_autogen/timestamp	199e71c56ae5304
+6	282	7868316746598384	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/_deps/googletest-build/googletest/gtest_autogen/mocs_compilation.cpp	a736c3a20625c33b
+60	608	7869369447090712	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLib_autogen/timestamp	199e71c56ae5304
+608	1574	7869369452577648	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLab_autogen/timestamp	753ddd2d2dc377e8
+283	412	7868316747301023	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/gtest_autogen/mocs_compilation.cpp.obj	af5c65c63c436432
+608	1574	7869369452577648	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLab_autogen/mocs_compilation.cpp	753ddd2d2dc377e8
+356	424	7869366928680361	CMakeFiles/SearchLib.dir/SearchLib_autogen/mocs_compilation.cpp.obj	b2b4cf2ae136dd23
+366	2509	7869366928774699	CMakeFiles/SearchLib.dir/grid.cpp.obj	22bf35af9b1010b7
+3458	5541	7869366959693466	CMakeFiles/SearchLab.dir/main.cpp.obj	5dd8495d1c198565
+621	1531	7869369452713681	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/UnitTests_autogen/mocs_compilation.cpp	d7973b7500f24aa4
+361	1453	7869366928725871	CMakeFiles/SearchLib.dir/algorithms.cpp.obj	b42a7dc892bccc13
+2509	2676	7869366950215071	libSearchLib.a	ceb9ddfbd9691423
+608	1574	7869369452577648	SearchLab_autogen/timestamp	753ddd2d2dc377e8
+1574	6105	7869369462238337	CMakeFiles/SearchLab.dir/mainwindow.cpp.obj	b6cfb4d07616b174
+14961	15239	7868316895928376	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/_deps/googletest-build/googletest/gtest_main_autogen/mocs_compilation.cpp	c825f86e9c3289ab
+608	1574	7869369452577648	SearchLab_autogen/mocs_compilation.cpp	753ddd2d2dc377e8
+1233	7600	7869360678214332	tests/UnitTests.exe	e06f2c67e244767a
+3452	5499	7869366959631107	CMakeFiles/SearchLab.dir/SearchLab_autogen/mocs_compilation.cpp.obj	b56a37fdcec869a5
+1233	7600	7869360678214332	tests/UnitTests[1]_tests.cmake	e06f2c67e244767a
+6106	6516	7869369507551183	SearchLab.exe	42a367c0cf01cc90
+286	8644	7868316747331002	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	d41bf9647c297784
+8647	14949	7868316830944100	lib/libgtest.a	eafbbba09c5e77a6
+14949	15212	7868316895860219	_deps/googletest-build/googlemock/gmock_autogen/timestamp	b562b1373c7b7b46
+14949	15212	7868316895860219	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/_deps/googletest-build/googlemock/gmock_autogen/mocs_compilation.cpp	b562b1373c7b7b46
+14949	15212	7868316895860219	_deps/googletest-build/googlemock/gmock_autogen/mocs_compilation.cpp	b562b1373c7b7b46
+15239	15303	7868316896865656	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/gtest_main_autogen/mocs_compilation.cpp.obj	381d3cf60214a1a0
+14949	15212	7868316895860219	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/_deps/googletest-build/googlemock/gmock_autogen/timestamp	b562b1373c7b7b46
+621	1531	7869369452713681	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/UnitTests_autogen/timestamp	d7973b7500f24aa4
+14961	15239	7868316895928376	_deps/googletest-build/googletest/gtest_main_autogen/timestamp	c825f86e9c3289ab
+14961	15239	7868316895928376	_deps/googletest-build/googletest/gtest_main_autogen/mocs_compilation.cpp	c825f86e9c3289ab
+14961	15239	7868316895928376	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/_deps/googletest-build/googletest/gtest_main_autogen/timestamp	c825f86e9c3289ab
+18229	18401	7868316927936056	_deps/googletest-build/googlemock/gmock_main_autogen/mocs_compilation.cpp	41f7862599fe6c95
+15212	15279	7868316896597684	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.obj	ff64b87633029f33
+15242	16300	7868316896887157	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	365c54a1a4acfb09
+18229	18401	7868316927936056	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/_deps/googletest-build/googlemock/gmock_main_autogen/timestamp	41f7862599fe6c95
+16301	16417	7868316907437828	lib/libgtest_main.a	f2f3b61b7288333d
+621	1531	7869369452713681	tests/UnitTests_autogen/timestamp	d7973b7500f24aa4
+621	1531	7869369452713681	tests/UnitTests_autogen/mocs_compilation.cpp	d7973b7500f24aa4
+16608	16678	7868316910537201	tests/CMakeFiles/UnitTests.dir/UnitTests_autogen/mocs_compilation.cpp.obj	fc5eae239dc18a86
+15216	17726	7868316896637839	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj	2b49fd852fbbf6d5
+2890	4569	7869366954021674	tests/CMakeFiles/UnitTests.dir/algorithms_tests.cpp.obj	fbe851dc0f2279a0
+17726	18229	7868316921686449	lib/libgmock.a	e89d32d77a44a367
+18229	18401	7868316927936056	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/_deps/googletest-build/googlemock/gmock_main_autogen/mocs_compilation.cpp	41f7862599fe6c95
+18401	18479	7868316928385490	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.obj	18de5ee5da62b900
+18404	19728	7868316928487683	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	57c186a247dd16fd
+1233	7600	7869360678214332	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/UnitTests[1]_tests.cmake	e06f2c67e244767a
+72	408	7869370044662780	SearchLib_autogen/timestamp	199e71c56ae5304
+72	408	7869370044662780	SearchLib_autogen/mocs_compilation.cpp	199e71c56ae5304
+72	408	7869370044662780	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLib_autogen/timestamp	199e71c56ae5304
+72	408	7869370044662780	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLib_autogen/mocs_compilation.cpp	199e71c56ae5304
+409	491	7869370048040299	CMakeFiles/SearchLib.dir/SearchLib_autogen/mocs_compilation.cpp.obj	4ce1776a79d91669
+420	1351	7869370048146273	CMakeFiles/SearchLib.dir/grid.cpp.obj	e340c9362702904e
+414	2066	7869370048090403	CMakeFiles/SearchLib.dir/algorithms.cpp.obj	6484cb385f63619b
+2066	2308	7869370064600088	libSearchLib.a	ceb9ddfbd9691423
+2308	2555	7869370067024777	SearchLab_autogen/timestamp	753ddd2d2dc377e8
+2308	2555	7869370067024777	SearchLab_autogen/mocs_compilation.cpp	753ddd2d2dc377e8
+2308	2555	7869370067024777	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLab_autogen/timestamp	753ddd2d2dc377e8
+2308	2555	7869370067024777	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLab_autogen/mocs_compilation.cpp	753ddd2d2dc377e8
+2555	5585	7869370069498526	CMakeFiles/SearchLab.dir/mainwindow.cpp.obj	b6cfb4d07616b174
+5585	5966	7869370099786883	SearchLab.exe	99ba1f27d20a76ea
+2321	11587	7869370159656479	tests/UnitTests.exe	e06f2c67e244767a
+2321	11587	7869370159656479	tests/UnitTests[1]_tests.cmake	e06f2c67e244767a
+2321	11587	7869370159656479	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/UnitTests[1]_tests.cmake	e06f2c67e244767a
+158	1394	7869371241257977	SearchLab_autogen/timestamp	753ddd2d2dc377e8
+158	1394	7869371241257977	SearchLab_autogen/mocs_compilation.cpp	753ddd2d2dc377e8
+158	1394	7869371241257977	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLab_autogen/timestamp	753ddd2d2dc377e8
+158	1394	7869371241257977	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLab_autogen/mocs_compilation.cpp	753ddd2d2dc377e8
+1405	4449	7869371242778696	CMakeFiles/SearchLab.dir/main.cpp.obj	5dd8495d1c198565
+1396	4462	7869371242696562	CMakeFiles/SearchLab.dir/SearchLab_autogen/mocs_compilation.cpp.obj	b56a37fdcec869a5
+1412	5116	7869371242860821	CMakeFiles/SearchLab.dir/mainwindow.cpp.obj	b6cfb4d07616b174
+5116	5623	7869371279895612	SearchLab.exe	99ba1f27d20a76ea
+115	1287	7869388833015260	SearchLab_autogen/timestamp	753ddd2d2dc377e8
+115	1287	7869388833015260	SearchLab_autogen/mocs_compilation.cpp	753ddd2d2dc377e8
+115	1287	7869388833015260	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLab_autogen/timestamp	753ddd2d2dc377e8
+115	1287	7869388833015260	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLab_autogen/mocs_compilation.cpp	753ddd2d2dc377e8
+1289	4334	7869388834459064	CMakeFiles/SearchLab.dir/SearchLab_autogen/mocs_compilation.cpp.obj	b56a37fdcec869a5
+1296	4399	7869388834540009	CMakeFiles/SearchLab.dir/main.cpp.obj	5dd8495d1c198565
+1303	5394	7869388834600135	CMakeFiles/SearchLab.dir/mainwindow.cpp.obj	b6cfb4d07616b174
+5394	5929	7869388875516181	SearchLab.exe	99ba1f27d20a76ea
+16	345	7869391570717587	SearchLab_autogen/timestamp	753ddd2d2dc377e8
+16	345	7869391570717587	SearchLab_autogen/mocs_compilation.cpp	753ddd2d2dc377e8
+16	345	7869391570717587	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLab_autogen/timestamp	753ddd2d2dc377e8
+16	345	7869391570717587	D:/c++ dev/course_project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SearchLab_autogen/mocs_compilation.cpp	753ddd2d2dc377e8
+347	7336	7869391574032766	CMakeFiles/SearchLab.dir/mainwindow.cpp.obj	b6cfb4d07616b174
+7337	8153	7869391643932087	SearchLab.exe	99ba1f27d20a76ea
