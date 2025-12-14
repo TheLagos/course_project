@@ -1,8 +1,6 @@
 #pragma once
 #include "graph_types.h"
 #include <cstdlib>
-#include <string>
-#include <iostream>
 
 class Grid {
 private:
@@ -25,9 +23,12 @@ public:
 
     bool set_start(int id);
     bool set_finish(int id);
+    void random_endpoints();
 
 	int get_start() const;
 	int get_finish() const;
+    int get_width() const;
+    int get_height() const;
 
 	const std::vector<Node>& get_graph() const;
 	size_t size() const;

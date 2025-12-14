@@ -1,5 +1,8 @@
 #include "grid.h"
 
+#include <string>
+#include <iostream>
+
 const int dx[] = { 0, 0, -1, 1 };
 const int dy[] = { -1, 1, 0, 0 };
 
@@ -44,13 +47,17 @@ void Grid::generator() {
 		}
 	}
 
-	do {
-		start_id = rand() % (width * height);
-	} while (graph[start_id].wall);
+    random_endpoints();
+}
 
-	do {
-		finish_id = rand() % (width * height);
-	} while (graph[finish_id].wall || finish_id == start_id);
+void Grid::random_endpoints() {
+    do {
+        start_id = rand() % (width * height);
+    } while (graph[start_id].wall);
+
+    do {
+        finish_id = rand() % (width * height);
+    } while (graph[finish_id].wall || finish_id == start_id);
 }
 
 void Grid::generate_graph(int w, int h, int chance, double max_dist) {
@@ -75,12 +82,8 @@ void Grid::toggle_wall(int id) {
 }
 
 bool Grid::set_start(int id) {
-    if (id < 0 || id >= (width * height) || id == finish_id) {
+    if (id < 0 || id >= (width * height)) {
         return false;
-    }
-
-    if (graph[id].wall) {
-        graph[id].wall = false;
     }
 
     start_id = id;
@@ -88,12 +91,8 @@ bool Grid::set_start(int id) {
 }
 
 bool Grid::set_finish(int id) {
-    if (id < 0 || id >= (width * height) || id == start_id) {
+    if (id < 0 || id >= (width * height)) {
         return false;
-    }
-
-    if (graph[id].wall) {
-        graph[id].wall = false;
     }
 
     finish_id = id;
@@ -102,6 +101,8 @@ bool Grid::set_finish(int id) {
 
 int Grid::get_start() const { return start_id; }
 int Grid::get_finish() const { return finish_id; }
+int Grid::get_width() const { return width; }
+int Grid::get_height() const { return height; }
 
 const std::vector<Node>& Grid::get_graph() const { return graph; }
 size_t Grid::size() const { return width * height; }
