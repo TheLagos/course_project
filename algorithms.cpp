@@ -1,5 +1,6 @@
 #pragma once
 #include <queue>
+#include <unordered_map>
 #include <algorithm>
 #include <chrono>
 #include <cmath>
@@ -17,7 +18,7 @@ Result dijkstra(const Grid& grid) {
 
     using type = std::pair<double, int>;
     constexpr double INF = std::numeric_limits<double>::infinity();
-    int visited_nodes = 0;
+    std::vector<int> visited_nodes;
 
     std::vector<double> distances(size, INF);
     std::vector<int> parents(size, -1);
@@ -31,7 +32,7 @@ Result dijkstra(const Grid& grid) {
         double current_distance = pq.top().first;
         int current_id = pq.top().second;
 
-        ++visited_nodes;
+        visited_nodes.push_back(current_id);
         pq.pop();
 
         if (current_distance > distances[current_id]) {
@@ -69,7 +70,7 @@ Result dijkstra(const Grid& grid) {
     }
     std::reverse(path.begin(), path.end());
 
-    return { true, distances[finish_id], visited_nodes, duration, std::move(path) };
+    return { true, distances[finish_id], duration, std::move(path), std::move(visited_nodes) };
 }
 
 double heuristic(const Node& left, const Node& right) {
@@ -90,7 +91,7 @@ Result a_star(const Grid& grid) {
 
     using type = std::pair<double, int>;
     constexpr double INF = std::numeric_limits<double>::infinity();
-    int visited_nodes = 0;
+    std::vector<int> visited_nodes;
 
     std::vector<double> g_distances(size, INF);
     std::vector<int> parents(size, -1);
@@ -104,7 +105,7 @@ Result a_star(const Grid& grid) {
         double current_f = pq.top().first;
         int current_id = pq.top().second;
 
-        ++visited_nodes;
+        visited_nodes.push_back(current_id);
         pq.pop();
 
         if (current_f > g_distances[current_id] + heuristic(graph[current_id], graph[finish_id]) + 0.00001) {
@@ -142,5 +143,53 @@ Result a_star(const Grid& grid) {
     }
     std::reverse(path.begin(), path.end());
 
-    return { true, g_distances[finish_id], visited_nodes, duration, std::move(path) };
+    return { true, g_distances[finish_id], duration, std::move(path), std::move(visited_nodes) };
+}
+
+Result bfs(const Grid& grid) {
+    Result result;
+    const std::vector<Node>& nodes = grid.get_graph();
+    int start = grid.get_start();
+    int finish = grid.get_finish();
+
+    std::queue<int> q;
+    q.push(start);
+
+    std::unordered_map<int, int> came_from;
+    came_from[start] = start;
+
+    while (!q.empty()) {
+        int current = q.front();
+        q.pop();
+
+        result.visited_nodes.push_back(current);
+
+        if (current == finish) {
+            result.found = true;
+            break;
+        }
+
+        for (const auto& edge : nodes[current].edges) {
+            int next = edge.to_id;
+
+            if (nodes[next].wall) continue;
+
+            if (came_from.find(next) == came_from.end()) {
+                q.push(next);
+                came_from[next] = current;
+            }
+        }
+    }
+
+    if (result.found) {
+        int current = finish;
+        while (current != start) {
+            result.path.push_back(current);
+            current = came_from[current];
+        }
+        result.path.push_back(start);
+        std::reverse(result.path.begin(), result.path.end());
+    }
+
+    return result;
 }

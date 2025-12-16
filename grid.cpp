@@ -107,19 +107,4 @@ int Grid::get_height() const { return height; }
 const std::vector<Node>& Grid::get_graph() const { return graph; }
 size_t Grid::size() const { return width * height; }
 
-void print_result(const Result& result, std::string&& algorithm_name) {
-    std::cout << algorithm_name << " results: " << "\n"
-              << "Successfull - " << result.found << "\n"
-              << "Total distance - " << result.total_distance << "\n"
-              << "Visited nodes count - " << result.visited_nodes << "\n"
-              << "Duration - " << result.duration << " ms \n"
-              << "Path - ";
 
-    for (const int& node : result.path) {
-        std::cout << node;
-        if (node != result.path.back()) {
-            std::cout << " -> ";
-        }
-    }
-    std::cout << "\n\n";
-}

@@ -8,3 +8,5 @@ double heuristic(const Node& left, const Node& right);
 
 Result a_star(const Grid& grid);
 
+Result bfs(const Grid& grid);
+

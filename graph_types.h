@@ -19,10 +19,10 @@ struct Node {
 struct Result {
     bool found = false;
     double total_distance = 0;
-    int visited_nodes = 0;
     long long duration = 0;
     std::vector<int> path;
+    std::vector<int> visited_nodes;
 
     Result() = default;
-    Result(bool f, double total, int visited, long long dur, std::vector<int>&& p) : found(f), total_distance(total), visited_nodes(visited), duration(dur), path(p) {}
+    Result(bool f, double total, long long dur, std::vector<int>&& p, std::vector<int>&& visited) : found(f), total_distance(total), duration(dur), path(p), visited_nodes(visited) {}
 };
